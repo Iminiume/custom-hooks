@@ -1,4 +1,4 @@
-export default function generateUUID() {
+export default function useGenerateUuid() {
   function randomHex(length) {
     let result = "";
     for (let i = 0; i < length; i++) {
