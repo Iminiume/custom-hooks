@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import useGenerateUuid from "./hooks/useGenerateUuid";
+import useSetCookie from "./hooks/useSetCookie";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const uuid = useGenerateUuid();
+  const cookieName = "_uuid";
+  const daysToExpire = 7;
+
+  useSetCookie(cookieName, uuid, daysToExpire);
+
+  return <div>App</div>;
 }
 
 export default App;
