@@ -6,10 +6,10 @@ import GeoLocation from "./examples/geoLocation";
 import LocalStorage from "./examples/localStorage";
 import SessionStorage from "./examples/sessionStorage";
 import DarkMode from "./examples/darkMode";
-import useDarkMode from "./hooks/useDarkMode";
 import MediaQuery from "./examples/mediaQuery/mediaQuery";
-import CopyToClipboard from "./examples/copyToClipboard/copyToClipboard";
-import ScrollPosition from "./examples/scrollPosition/scrollPosition";
+import CopyToClipboard from "./examples/copyToClipboard";
+import ScrollPosition from "./examples/scrollPosition";
+import Notification from "./examples/notification";
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
       <LocalStorage />
       <SessionStorage />
       <CopyToClipboard />
+      <Notification />
     </>
   );
 }
