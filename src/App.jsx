@@ -12,7 +12,8 @@ import ScrollPosition from "./examples/scrollPosition";
 import Notification from "./examples/notification";
 import AudioPlayer from "./examples/audioPlayer";
 import InfinityScroll from "./examples/infinityScroll";
-import NetworkStatus from "./examples/networkStatus/networkStatus";
+import NetworkStatus from "./examples/networkStatus";
+import MultiStepForm from "./examples/multiStepForm";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <DarkMode />
       <Authentication />
       <WebSocket />
+      <MultiStepForm />
       <FormValidation />
       <ScrollPosition />
       <GeoLocation />

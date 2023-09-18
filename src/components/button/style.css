@@ -12,3 +12,6 @@
     color: black;
     cursor: pointer;
 }
+.styledButton:disabled{
+    background-color: gray;
+}
