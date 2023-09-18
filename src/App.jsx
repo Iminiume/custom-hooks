@@ -7,14 +7,12 @@ import LocalStorage from "./examples/localStorage";
 import SessionStorage from "./examples/sessionStorage";
 import DarkMode from "./examples/darkMode";
 import useDarkMode from "./hooks/useDarkMode";
+import MediaQuery from "./examples/mediaQuery/mediaQuery";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useDarkMode();
-  console.log(isDarkMode);
-
   return (
     <>
-      {/* Your components */}
+      <MediaQuery />
       <DarkMode />
       <Authentication />
       <WebSocket />
