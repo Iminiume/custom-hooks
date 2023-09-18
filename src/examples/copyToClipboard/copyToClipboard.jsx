@@ -12,8 +12,7 @@ function CopyToClipboard() {
 
   const handlePaste = async () => {
     const pastedText = await pasteFromClipboard();
-    console.log(textToCopy);
-    setTextToCopy(...textToCopy, pastedText);
+    setTextToCopy(pastedText);
     console.log("Pasted text:", pastedText);
   };
 

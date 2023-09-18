@@ -9,6 +9,7 @@ import DarkMode from "./examples/darkMode";
 import useDarkMode from "./hooks/useDarkMode";
 import MediaQuery from "./examples/mediaQuery/mediaQuery";
 import CopyToClipboard from "./examples/copyToClipboard/copyToClipboard";
+import ScrollPosition from "./examples/scrollPosition/scrollPosition";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Authentication />
       <WebSocket />
       <FormValidation />
+      <ScrollPosition />
       <GeoLocation />
       <LocalStorage />
       <SessionStorage />
