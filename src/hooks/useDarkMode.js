@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function useDarkModeFromQuery() {
+function useDarkMode() {
   // Get the current URL search query
   const searchParams = new URLSearchParams(window.location.search);
   const isDarkModePreferred = searchParams.get("darkMode") === "true";
@@ -24,4 +24,4 @@ function useDarkModeFromQuery() {
   return [isDarkMode, setIsDarkMode];
 }
 
-export default useDarkModeFromQuery;
+export default useDarkMode;

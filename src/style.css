@@ -1,8 +1,15 @@
-body, head{
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    
+:root{
+    --main-dark-bg-color: #212124;
+    --main-light-bg-color: #ffffff;
+
+    --text-dark-color: #ffffff;
+    --text-light-color: #212124;
+}
+
+body, head{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     width: 100vw;
     height: 100vh;   
 }
@@ -14,4 +21,12 @@ body, head{
 
     width: 100%;
     
+}
+.lightTheme{
+    background-color: var(--main-light-bg-color);
+    color : var(--text-light-color)
+}
+.darkTheme{
+    background-color: var(--main-dark-bg-color);
+    color: var(--text-dark-color)
 }
