@@ -10,7 +10,7 @@ import MediaQuery from "./examples/mediaQuery/mediaQuery";
 import CopyToClipboard from "./examples/copyToClipboard";
 import ScrollPosition from "./examples/scrollPosition";
 import Notification from "./examples/notification";
-
+import AudioPlayer from "./examples/audioPlayer";
 function App() {
   return (
     <>
@@ -25,6 +25,7 @@ function App() {
       <SessionStorage />
       <CopyToClipboard />
       <Notification />
+      <AudioPlayer />
     </>
   );
 }
