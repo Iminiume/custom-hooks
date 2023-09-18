@@ -12,11 +12,13 @@ import ScrollPosition from "./examples/scrollPosition";
 import Notification from "./examples/notification";
 import AudioPlayer from "./examples/audioPlayer";
 import InfinityScroll from "./examples/infinityScroll";
+import NetworkStatus from "./examples/networkStatus/networkStatus";
 
 function App() {
   return (
     <>
       <MediaQuery />
+      <NetworkStatus />
       <DarkMode />
       <Authentication />
       <WebSocket />
