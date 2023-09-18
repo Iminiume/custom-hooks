@@ -31,9 +31,10 @@ function Authentication() {
   const renderAuthExample = useCallback(() => {
     return (
       <div className="container">
+        <h1>Authentication Example</h1>
         {authToken ? (
           <div className="container">
-            <p>Welcome</p>
+            <p>Welcome (see the Cookies)</p>
             <Button onClick={handleLogout}>Logout</Button>
           </div>
         ) : (
