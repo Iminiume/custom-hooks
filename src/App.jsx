@@ -11,6 +11,8 @@ import CopyToClipboard from "./examples/copyToClipboard";
 import ScrollPosition from "./examples/scrollPosition";
 import Notification from "./examples/notification";
 import AudioPlayer from "./examples/audioPlayer";
+import InfinityScroll from "./examples/infinityScroll";
+
 function App() {
   return (
     <>
@@ -26,6 +28,7 @@ function App() {
       <CopyToClipboard />
       <Notification />
       <AudioPlayer />
+      <InfinityScroll />
     </>
   );
 }
