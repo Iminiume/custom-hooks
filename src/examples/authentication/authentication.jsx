@@ -30,14 +30,14 @@ function Authentication() {
 
   const renderAuthExample = useCallback(() => {
     return (
-      <div>
+      <div className="container">
         {authToken ? (
-          <div>
+          <div className="container">
             <p>Welcome</p>
             <Button onClick={handleLogout}>Logout</Button>
           </div>
         ) : (
-          <div>
+          <div className="container">
             <p>Please log in</p>
             <Button onClick={handleLogin}>Login</Button>
           </div>

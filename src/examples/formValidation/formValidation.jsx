@@ -36,50 +36,53 @@ function FormValidation() {
     validationRules
   );
 
+  const inputs = [
+    {
+      type: "text",
+      name: "username",
+      value: formState.username,
+      error: errors.username && errors.username[0],
+    },
+    {
+      type: "text",
+      name: "email",
+      value: formState.email,
+      error: errors.email && errors.email[0],
+    },
+    {
+      type: "password",
+      name: "password",
+      value: formState.password,
+      error: errors.password && errors.password[0],
+    },
+  ];
+
   const renderFormValidation = useCallback(() => {
     return (
-      <div>
+      <div className="container">
         <h1>Form Validation Example</h1>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>Username:</label>
-            <input
-              type="text"
-              name="username"
-              value={formState.username}
-              onChange={handleChange}
-            />
-            {errors.username && (
-              <div className="error">{errors.username[0]}</div>
-            )}
-          </div>
-          <div>
-            <label>Email:</label>
-            <input
-              type="text"
-              name="email"
-              value={formState.email}
-              onChange={handleChange}
-            />
-            {errors.email && <div className="error">{errors.email[0]}</div>}
-          </div>
-          <div>
-            <label>Password:</label>
-            <input
-              type="password"
-              name="password"
-              value={formState.password}
-              onChange={handleChange}
-            />
-            {errors.password && (
-              <div className="error">{errors.password[0]}</div>
-            )}
-          </div>
+        <form onSubmit={handleSubmit} className="container">
+          {inputs.map((item, i) => {
+            const { type, name, value, error } = item;
+
+            return (
+              <div key={i}>
+                <label>{name} : </label>
+                <input
+                  type={type}
+                  name={name}
+                  value={value}
+                  onChange={handleChange}
+                />
+                <div className="error">{error}</div>
+              </div>
+            );
+          })}
           <Button type="submit">Submit</Button>
         </form>
       </div>
     );
-  }, []);
+  }, [formState]);
   return <>{renderFormValidation()}</>;
 }
 

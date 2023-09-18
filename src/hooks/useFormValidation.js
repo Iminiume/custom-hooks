@@ -3,7 +3,6 @@ import { useState } from "react";
 function useFormValidation(initialState, validationRules) {
   const [formState, setFormState] = useState(initialState);
   const [errors, setErrors] = useState({});
-
   const validateField = (fieldName, value) => {
     if (validationRules[fieldName]) {
       const rules = validationRules[fieldName];
@@ -18,7 +17,6 @@ function useFormValidation(initialState, validationRules) {
       setErrors({ ...errors, [fieldName]: fieldErrors });
     }
   };
-
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -42,7 +40,12 @@ function useFormValidation(initialState, validationRules) {
       }
     }
 
-    if (Object.keys(newErrors).length === 0) {
+    if (
+      Object.keys(newErrors).length === 0 &&
+      formState.username &&
+      formState.password &&
+      formState.email
+    ) {
       // Form is valid; you can submit the data here
       console.log("Form is valid. Submitting...");
     } else {

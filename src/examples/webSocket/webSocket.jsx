@@ -16,10 +16,10 @@ function WebSocket() {
 
   const renderWebSocketExample = useCallback(() => {
     return (
-      <div>
+      <div className="container">
         <h1>WebSocket Example</h1>
         <p>WebSocket Status: {isOpen ? "Connected" : "Disconnected"}</p>
-        <div>
+        <div className="container">
           <input
             type="text"
             value={inputMessage}
