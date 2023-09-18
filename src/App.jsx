@@ -8,6 +8,7 @@ import SessionStorage from "./examples/sessionStorage";
 import DarkMode from "./examples/darkMode";
 import useDarkMode from "./hooks/useDarkMode";
 import MediaQuery from "./examples/mediaQuery/mediaQuery";
+import CopyToClipboard from "./examples/copyToClipboard/copyToClipboard";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <GeoLocation />
       <LocalStorage />
       <SessionStorage />
+      <CopyToClipboard />
     </>
   );
 }
