@@ -14,6 +14,7 @@ import AudioPlayer from "./examples/audioPlayer";
 import InfinityScroll from "./examples/infinityScroll";
 import NetworkStatus from "./examples/networkStatus";
 import MultiStepForm from "./examples/multiStepForm";
+import Animation from "./examples/animation";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <MediaQuery />
       <NetworkStatus />
       <DarkMode />
+      <Animation />
       <Authentication />
       <WebSocket />
       <MultiStepForm />
