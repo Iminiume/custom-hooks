@@ -21,7 +21,7 @@ function Animation() {
           width: "100px",
           height: "100px",
           backgroundColor: "blue",
-          position: "absolute",
+          //   position: "absolute",
         }}
       />
       <Button onClick={startAnimation}>Start Animation</Button>

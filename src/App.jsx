@@ -15,6 +15,7 @@ import InfinityScroll from "./examples/infinityScroll";
 import NetworkStatus from "./examples/networkStatus";
 import MultiStepForm from "./examples/multiStepForm";
 import Animation from "./examples/animation";
+import DragAndDrop from "./examples/dragAndDrop";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <DarkMode />
       <Animation />
       <Authentication />
+      <DragAndDrop />
       <WebSocket />
       <MultiStepForm />
       <FormValidation />
