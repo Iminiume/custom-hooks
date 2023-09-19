@@ -3,10 +3,10 @@ import useWebSocket from "../../hooks/useWebSocket";
 import Button from "../../components/button";
 
 function WebSocket() {
-  console.log("first");
   const [inputMessage, setInputMessage] = useState("");
   const { isOpen, message, sendWebSocketMessage } = useWebSocket(
-    "wss://www.example.com/socketserver"
+    "wss://sock.mailsac.com/incoming-messages",
+    "?key=k_Ky1532r0ZbTkqL5Uk4R4SicPXcZZCCuNq0A739f&addresses=iminiume@gmail.com"
   );
 
   const handleMessageSend = () => {

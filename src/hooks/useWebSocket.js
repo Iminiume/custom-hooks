@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
-function useWebSocket(url) {
+function useWebSocket(url, params) {
   const [socket, setSocket] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState(null);
 
   useEffect(() => {
     // Create a new WebSocket connection when the component mounts
-    const newSocket = new WebSocket(url);
+    const newSocket = new WebSocket(url + params);
 
     newSocket.onopen = () => {
       setIsOpen(true);
