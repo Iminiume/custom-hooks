@@ -17,6 +17,9 @@ import MultiStepForm from "./examples/multiStepForm";
 import Animation from "./examples/animation";
 import DragAndDrop from "./examples/dragAndDrop";
 import Pagination from "./examples/pagination";
+import Async from "./examples/async";
+import Throttling from "./examples/throttling";
+import Debounce from "./examples/debounce";
 
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
       <DragAndDrop />
       <WebSocket />
       <Pagination />
+      <Async />
+      <Throttling />
+      <Debounce />
       <MultiStepForm />
       <FormValidation />
       <ScrollPosition />
