@@ -16,6 +16,7 @@ import NetworkStatus from "./examples/networkStatus";
 import MultiStepForm from "./examples/multiStepForm";
 import Animation from "./examples/animation";
 import DragAndDrop from "./examples/dragAndDrop";
+import Pagination from "./examples/pagination";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Authentication />
       <DragAndDrop />
       <WebSocket />
+      <Pagination />
       <MultiStepForm />
       <FormValidation />
       <ScrollPosition />
