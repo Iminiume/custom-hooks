@@ -1,40 +1,23 @@
-import { useState, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 
-const useAsync = (asyncFunction) => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+export default function useAsync(callback, dependencies = []) {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState();
+  const [value, setValue] = useState();
+
+  const callbackMemoized = useCallback(() => {
+    setLoading(true);
+    setError(undefined);
+    setValue(undefined);
+    callback()
+      .then(setValue)
+      .catch(setError)
+      .finally(() => setLoading(false));
+  }, dependencies);
 
   useEffect(() => {
-    // Function to reset the state
-    const resetState = () => {
-      setData(null);
-      setLoading(true);
-      setError(null);
-    };
+    callbackMemoized();
+  }, [callbackMemoized]);
 
-    // Call the async function and handle the promise
-    const fetchData = async () => {
-      resetState();
-      try {
-        const result = await asyncFunction();
-        setData(result);
-      } catch (err) {
-        setError(err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-
-    // Cleanup effect (optional)
-    return () => {
-      // You can add any cleanup code here, if necessary.
-    };
-  }, [asyncFunction]);
-
-  return { data, loading, error };
-};
-
-export default useAsync;
+  return { loading, error, value };
+}
