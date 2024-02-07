@@ -1,0 +1,16 @@
+.box-container {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  width: 260px;
+  max-height: 260px;
+  border: 1px solid white;
+}
+
+.box-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  min-height: 50px;
+}

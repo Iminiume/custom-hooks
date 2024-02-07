@@ -1,32 +1,32 @@
-:root{
-    --main-dark-bg-color: #212124;
-    --main-light-bg-color: #ffffff;
+:root {
+  --main-light-bg-color: #212124;
+  --text-light-color: #ffffff;
 
-    --text-dark-color: #ffffff;
-    --text-light-color: #212124;
+  --main-dark-bg-color: #212124;
+  --text-dark-color: #ffffff;
 }
 
-body, head{ 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    width: 100vw;
-    height: 100vh;   
+body,
+head {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
 }
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    width: 100%;
-    
+  width: 100%;
 }
-.lightTheme{
-    background-color: var(--main-light-bg-color);
-    color : var(--text-light-color)
+.lightTheme {
+  background-color: var(--main-light-bg-color);
+  color: var(--text-light-color);
 }
-.darkTheme{
-    background-color: var(--main-dark-bg-color);
-    color: var(--text-dark-color)
+.darkTheme {
+  background-color: var(--main-dark-bg-color);
+  color: var(--text-dark-color);
 }

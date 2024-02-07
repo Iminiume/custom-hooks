@@ -1,62 +1,45 @@
-import React from "react";
-import usePagination from "../../hooks/usePagination";
+import React, { useEffect, useRef, useState } from "react";
+import UsePagination from "../../hooks/usePagination";
+import { exampleConfig } from "../../api";
+import "./style.css";
+function Pagination() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(null);
 
-const fetchDataForPage = async (startIndex, endIndex) => {
-  // Simulate fetching paginated data
-  const data = Array.from({ length: endIndex - startIndex }, (_, index) => ({
-    id: startIndex + index + 1,
-    name: `Item ${startIndex + index + 1}`,
-  }));
-  return data;
-};
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await UsePagination(exampleConfig(), ".box-container");
+        console.log(result);
+        setData((prevData) => [...prevData, ...result]);
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-const Pagination = () => {
-  const {
-    currentPage,
-    data,
-    loading,
-    error,
-    itemsPerPage,
-    nextPage,
-    prevPage,
-    goToPage,
-  } = usePagination(fetchDataForPage);
+    fetchData();
+  }, []);
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-
   return (
-    <div>
-      <h1>Paginated Data:</h1>
-      <ul>
-        {data.map((item) => (
-          <li key={item.id}>{item.name}</li>
-        ))}
-      </ul>
-      <div>
-        <button onClick={prevPage}>Previous</button>
-        <button onClick={nextPage}>Next</button>
-      </div>
-      <div>
-        Page {currentPage} of {Math.ceil(data.length / itemsPerPage)}
-      </div>
-      <div>
-        Go to Page:
-        <input
-          type="number"
-          min="1"
-          max={Math.ceil(data.length / itemsPerPage)}
-          value={currentPage}
-          onChange={(e) => goToPage(Number(e.target.value))}
-        />
+    <div className="container">
+      <h1>Pagination Example</h1>
+      <div className="box-container">
+        {data?.map((item, i) => {
+          return (
+            <div key={i} className="box-item">
+              {item.alias}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
-};
-
+}
 export default Pagination;

@@ -24,6 +24,7 @@ import Debounce from "./examples/debounce";
 function App() {
   return (
     <>
+      <Pagination />
       <MediaQuery />
       <NetworkStatus />
       <DarkMode />
@@ -31,7 +32,6 @@ function App() {
       <Authentication />
       <DragAndDrop />
       <WebSocket />
-      <Pagination />
       <Async />
       <Throttling />
       <Debounce />

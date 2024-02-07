@@ -1,16 +1,16 @@
 export class FetchAPI {
-  private readonly config;
+  config;
+  limit;
 
-  data: any = [];
-  isLoading: Boolean = false;
-  limit: number;
+  data = [];
+  isLoading = false;
 
-  constructor(config: object) {
+  constructor(config) {
     this.config = config;
     this.limit = this.config.urlConfig.limit;
   }
 
-  generateUrl(url: string, params) {
+  generateUrl(url, params) {
     const queryParams = new URLSearchParams(params);
     return `${url}?${queryParams.toString()}`;
   }
@@ -21,14 +21,12 @@ export class FetchAPI {
 
   async fetchData() {
     const { fetchDataUrl, urlConfig, alias } = this.config;
-
     try {
       this.isLoading = true;
       const response = await fetch(
         this.generateUrl(this.urlWithDdb32(fetchDataUrl, alias), urlConfig)
       );
       const newData = await response.json();
-
       this.data = [...this.data, ...newData.body.result];
     } catch (err) {
       console.error(err);
