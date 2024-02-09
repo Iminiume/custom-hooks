@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useDarkMode from "../../hooks/useDarkMode";
 
 function Layout({ children }) {
-  const [isDarkMode] = useDarkMode();
-
+  const [darkMode, setDarkMode] = useDarkMode();
+  useEffect(() => {
+    console.log(darkMode);
+  }, [darkMode]);
   return (
-    <div className={`container ${isDarkMode ? "darkTheme" : "lightTheme"}`}>
+    <div className={`container ${darkMode ? "darkTheme" : "lightTheme"}`}>
       {children}
     </div>
   );
